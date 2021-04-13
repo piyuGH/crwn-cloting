@@ -4,6 +4,22 @@ import { Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 
 import HomePage from "./pages/homepage/homepage.component";
+import ShopPage from "./pages/shop/shop.components";
+
+function App() {
+  return (
+    <div className="App">
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/" component={ShopPage} />
+      </Switch>
+    </div>
+  );
+}
+
+export default App;
+
+/*
 
 const HatsPage = (props) => {
   console.log(props);
@@ -14,15 +30,4 @@ const HatsPage = (props) => {
   );
 };
 
-function App() {
-  return (
-    <div className="App">
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/hats" component={HatsPage} />
-      </Switch>
-    </div>
-  );
-}
-
-export default App;
+*/
