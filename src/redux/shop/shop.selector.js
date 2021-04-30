@@ -14,11 +14,17 @@ export const selectCollections = createSelector(
   [selectShop],
   (shop) => shop.collections
 );
+
+export const selectCollectionForPreview = createSelector(
+  [selectCollections],
+  (collections) => Object.keys(collections).map((key) => collections[key])
+);
+
 // collectionUrlParam is a paramater
 export const selectCollection = (collectionUrlParam) =>
   createSelector(
     [selectCollections],
-    (collections) => collections[collectionUrlParam]  //collection is object {} : data normalization thereby optimise query search
+    (collections) => collections[collectionUrlParam] //collection is object {} : data normalization thereby optimise query search
     // when collections was []
     // (collections) =>
     //   collections.find(
